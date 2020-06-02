@@ -1,9 +1,19 @@
-from flask import Flask
-app = Flask(__name__)
+flask import Flask, request, jsonify
+app = Flask(__name__) 
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-@app.route('/')
+@app.route('/actor', methods = ['POST', 'GET'])
 def hello_world():
-    return 'Hello, World!'
+    actor = request.args.get('actor') 
+    actress = request.args.get('actress') 
+    result = {
+        "actor" : actor,
+        "actress" : actress,
+        "city" : "chennai",
+        "state" : "tn"
+
+    }
+    return jsonify(result)
 
 if __name__ == "__main__":
-    app.run() 
+    app.run(debug = True) 
