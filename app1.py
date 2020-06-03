@@ -1,4 +1,4 @@
-flask import Flask, request, jsonify
+from flask import Flask, request, jsonify
 app = Flask(__name__) 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
@@ -7,8 +7,8 @@ def hello_world():
     actor = request.args.get('actor') 
     actress = request.args.get('actress') 
     result = {
-        "actor" : actor,
-        "actress" : actress,
+        "actor" : 'surya',
+        "actress" : 'jyothika',
         "city" : "chennai",
         "state" : "tn"
 
