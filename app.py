@@ -15,10 +15,10 @@ def get_country():
 def ip():
     ip_address = request.remote_addr
     return ip_address
-
+'''
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
-
+'''
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
@@ -36,7 +36,7 @@ def hello_world():
     return jsonify(result)
 
 
-@app.route("/")
+@app.route("/home")
 def home():
   return render_template("home.html")
   
